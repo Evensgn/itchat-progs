@@ -15,8 +15,8 @@
 /autodict add [A] [B]	      Add an auto-reply item for [A] as [B]
 /autodict del [A]             Delete the auto-reply item for [A]
 /autodict load [file]         Load auto-reply dictionary from [file]
-/autodict save [file]       Save auto-reply dictionary to [file]
-/autoprefix set [A]      	    Set auto-reply prefix as [A]
+/autodict save [file]         Save auto-reply dictionary to [file]
+/autoprefix set [A]      	  Set auto-reply prefix as [A]
 /autoprefix off               Hide auto-reply prefix
 /autoprefix on                Show auto-reply prefix
 /remindmsg off                Turn off message reminder
