@@ -2,10 +2,9 @@
 ## 简单介绍
 这是一个实现微信个人账号自动回复的Python程序，使用[@LittleCoder](https://github.com/littlecodersh)开源的WeChat的Python接口[itchat](https://github.com/littlecodersh/ItChat)。
 
-可以针对特定的好友分别设置不同的自动回复内容，并可以使用**第二个微信账号**作为控制账号向应用此程序的账号发送控制命令进行各项功能的控制。可以将自动回复列表保存到文件，也可以从文件导入自动回复列表。
+可以针对特定的好友分别设置不同的自动回复内容，并可以通过向**文件传输助手**发送控制命令进行各项功能的控制。可以将自动回复列表保存到文件，也可以从文件导入自动回复列表。
 ### 自动回复Demo
-![autoreply-demo-0](demo/autoreply-demo-0.jpg) 
-![autoreply-demo-1](demo/autoreply-demo-1.jpg)
+![autoreply-demo-0](demo/autoreply-demo-0.jpg) ![autoreply-demo-1](demo/autoreply-demo-1.jpg)
 ## 控制命令列表
 在本程序的命令中均使用好友的**备注名**识别好友账号。
 使用控制账号向应用此程序的账号发送下列命令可以实现各种功能的控制：
@@ -22,28 +21,20 @@
 /autoprefix set [A]      	  Set auto-reply prefix as [A]
 /autoprefix off               Hide auto-reply prefix
 /autoprefix on                Show auto-reply prefix
-/remindmsg off                Turn off message reminder
-/remindmsg on                 Turn on message reminder
 ```
 ### 控制命令Demo
 ![autoreply-control-demo](demo/autoreply-control-demo.jpg)
 ## 初始设置
 在下面这段代码中进行初始设置：
 ```python
-# The admin-account controls the auto-reply
-adminRemarkName = 'Evensgn-R'
-
 # default settings
 autoReply = True
 showAutoPrefix = True
-remindMessage = True
 # default auto-reply prefix
 autoPrefix = '[Auto Reply] '
 
-# adminRemarkName: 控制账号在应用此程序的微信账号中的备注
 # autoReply: 是否进行自动回复
 # showAutoPrefix: 是否在自动回复消息前添加前缀
-# remindMessage: 是否向控制账号发送消息提醒
 # autoPrefix: 自动回复的前缀
 ```
 
