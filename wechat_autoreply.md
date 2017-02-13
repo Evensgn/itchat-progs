@@ -7,7 +7,7 @@
 ![autoreply-demo-0](demo/autoreply-demo-0.jpg) ![autoreply-demo-1](demo/autoreply-demo-1.jpg)
 ## 控制命令列表
 在本程序的命令中均使用好友的**备注名**识别好友账号。
-使用控制账号向应用此程序的账号发送下列命令可以实现各种功能的控制：
+通过向**文件传输助手**发送下列命令可以实现各种功能的控制，并将得到程序发送的反馈信息：
 ```
 /help                         Show this table
 /autoreply off                Turn off auto-reply
@@ -23,6 +23,7 @@
 /autoprefix on                Show auto-reply prefix
 ```
 ### 控制命令Demo
+其中以'/'开头的消息为发送的控制命令，其余消息为程序发送的反馈信息。
 ![autoreply-control-demo-0](demo/autoreply-control-demo-0.jpg) ![autoreply-control-demo-1](demo/autoreply-control-demo-1.jpg)
 ## 初始设置
 在下面这段代码中进行初始设置：
