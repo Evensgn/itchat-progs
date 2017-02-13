@@ -25,7 +25,8 @@
 /remindmsg off                Turn off message reminder
 /remindmsg on                 Turn on message reminder
 ```
-
+### 控制命令Demo
+![autoreply-control-demo](demo/autoreply-control-demo.jpg)
 ## 初始设置
 在下面这段代码中进行初始设置：
 ```python
