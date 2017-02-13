@@ -3,7 +3,8 @@
 这是一个实现微信个人账号自动回复的Python程序，使用[@LittleCoder](https://github.com/littlecodersh)开源的WeChat的Python接口[itchat](https://github.com/littlecodersh/ItChat)。
 
 可以针对特定的好友分别设置不同的自动回复内容，并可以使用**第二个微信账号**作为控制账号向应用此程序的账号发送控制命令进行各项功能的控制。可以将自动回复列表保存到文件，也可以从文件导入自动回复列表。
-
+### 自动回复Demo
+![auto-reply-demo-0][demo/auto-reply-demo-0.jpg] ![auto-reply-demo-1][demo/auto-reply-demo-1.jpg]
 ## 控制命令列表
 在本程序的命令中均使用好友的**备注名**识别好友账号。
 使用控制账号向应用此程序的账号发送下列命令可以实现各种功能的控制：
