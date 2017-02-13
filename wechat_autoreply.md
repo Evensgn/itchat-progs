@@ -23,7 +23,7 @@
 /autoprefix on                Show auto-reply prefix
 ```
 ### 控制命令Demo
-![autoreply-control-demo](demo/autoreply-control-demo.jpg)
+![autoreply-control-demo-0](demo/autoreply-control-demo-0.jpg) ![autoreply-control-demo-1](demo/autoreply-control-demo-1.jpg)
 ## 初始设置
 在下面这段代码中进行初始设置：
 ```python
