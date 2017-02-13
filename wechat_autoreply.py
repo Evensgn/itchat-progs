@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
+
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -8,13 +9,9 @@ import requests, itchat
 from itchat.content import *
 import re
 
-# The admin-account controls the auto-reply
-adminRemarkName = 'Evensgn-R'
-
 # default settings
 autoReply = True
 showAutoPrefix = True
-remindMessage = True
 # default auto-reply prefix
 autoPrefix = '[Auto Reply] '
 autoDict = {}
@@ -30,23 +27,12 @@ def underlineToSpace(s):
 
 @itchat.msg_register([TEXT, PICTURE, RECORDING], isGroupChat = False)
 def reply(msg):
-	global adminRemarkName
 	global autoReply
 	global showAutoPrefix
-	global remindMessage
 	global autoPrefix
 	global autoDict
-	# the return value is a list
-	adminAccount = itchat.search_friends(remarkName = adminRemarkName)[0]
-	friend = itchat.search_friends(userName = msg['FromUserName'])
-	if friend:
-		remarkName = friend['RemarkName']
-	# if cannot find this friend
-	else:
-		remarkName = 'RemarkName Error'
-	reply = ''
-	# react to message from the admin-account
-	if remarkName == adminRemarkName:
+	# react to message from yourself
+	if msg['ToUserName'] == 'filehelper':
 		arg = re.compile(' ').split(msg['Text'])
 		nonSense = False
 		try:
@@ -64,8 +50,6 @@ def reply(msg):
 				/autoprefix set [A]      	  Set auto-reply prefix as [A]
 				/autoprefix off               Hide auto-reply prefix
 				/autoprefix on                Show auto-reply prefix
-				/remindmsg off                Turn off message reminder
-				/remindmsg on                 Turn on message reminder
 				'''
 			elif arg[0] == '/autoreply':
 				if arg[1] == 'off':
@@ -122,32 +106,27 @@ def reply(msg):
 					reply = 'Show auto-reply prefix \'' + autoPrefix + '\'.'
 				else:
 					nonSense = True
-			elif arg[0] == '/remindmsg':
-				if arg[1] == 'off':
-					remindMessage = False
-					reply = 'Turn off message reminder.'
-				elif arg[1] == 'on':
-					remindMessage = True
-					reply = 'Turn on message reminder.'
-				else:
-					nonSense = True
 		except:
 			nonSense = True
 		if nonSense:
 			reply = 'Use /help to view help information.'
-	# if remarkName is not adminRemarkName
+		itchat.send(reply, toUserName = 'filehelper')
+	# if message is from other accounts
 	else:
-		# message reminder
-		if remindMessage and remarkName != 'RemarkName Error':
-			toAdmin = '[' + remarkName + '] sent you a message.'
-			itchat.send(toAdmin, adminAccount['UserName'])
+		friend = itchat.search_friends(userName = msg['FromUserName'])
+		if friend:
+			remarkName = friend['RemarkName']
+		# if cannot find this friend
+		else:
+			remarkName = 'RemarkName Error'
+		reply = ''
 		# auto-reply
 		if autoReply:
 			if remarkName in autoDict:
 				if showAutoPrefix:
 					reply = autoPrefix
 				reply += autoDict[remarkName]
-	return reply
+		itchat.send(reply, msg['FromUserName'])
 
 itchat.auto_login(enableCmdQR = True)
 itchat.run()
