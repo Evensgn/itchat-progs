@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 import requests, itchat
 from itchat.content import *
 import re
@@ -127,14 +131,14 @@ def reply(msg):
 					reply = 'Turn on message reminder.'
 				else:
 					nonSense = True
-		except e:
+		except:
 			nonSense = True
 		if nonSense:
 			reply = 'Use /help to view help information.'
 	# if remarkName is not adminRemarkName
 	else:
 		# message reminder
-		if remindMessage:
+		if remindMessage and remarkName != 'RemarkName Error':
 			toAdmin = '[' + remarkName + '] sent you a message.'
 			itchat.send(toAdmin, adminAccount['UserName'])
 		# auto-reply
