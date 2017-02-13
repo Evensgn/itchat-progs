@@ -12,10 +12,10 @@
 /autoreply on                 Turn on auto-reply
 /autodict reset               Reset auto-reply dictionary
 /autodict show                Show auto-reply dictionary
-/autodict add [A] [B]	        Add an auto-reply item for [A] as [B]
+/autodict add [A] [B]	      Add an auto-reply item for [A] as [B]
 /autodict del [A]             Delete the auto-reply item for [A]
 /autodict load [file]         Load auto-reply dictionary from [file]
-/autodict save [file]         Save auto-reply dictionary to [file]
+/autodict save [file]       Save auto-reply dictionary to [file]
 /autoprefix set [A]      	    Set auto-reply prefix as [A]
 /autoprefix off               Hide auto-reply prefix
 /autoprefix on                Show auto-reply prefix
