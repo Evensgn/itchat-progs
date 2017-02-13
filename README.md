@@ -7,6 +7,6 @@ Evensgn的扩展个人微信账号功能的Python程序，使用[@LittleCoder](h
 
 ## 使用说明
 使用前需要安装itchat，可以使用以下命令安装：
-```python
+```bash
 pip install itchat
 ```
