@@ -1,8 +1,8 @@
 # wechat_autoreply.py 使用说明
 ## 简单介绍
-这是一个实现微信个人账号自动回复的Python程序，使用[@LittleCoder](https://github.com/littlecodersh)开源的WeChat的Python接口[itchat](https://github.com/littlecodersh/ItChat)。是
-可以实现针对特定的好友分别设置不同的自动回复内容，并可以使用第二个微信账号作为控制账号向应用此程序的账号发送控制命令进行各项功能的控制。
-若没有第二个微信账号，也可以通过类似文件导入的方式，使用文件设置希望设定的自动回复列表，但无法进行方便的各种功能控制。
+这是一个实现微信个人账号自动回复的Python程序，使用[@LittleCoder](https://github.com/littlecodersh)开源的WeChat的Python接口[itchat](https://github.com/littlecodersh/ItChat)。
+
+可以实现针对特定的好友分别设置不同的自动回复内容，并可以使用第二个微信账号作为控制账号向应用此程序的账号发送控制命令进行各项功能的控制。可以将自动回复列表保存到文件，也可以从文件导入自动回复列表。
 
 ## 控制命令列表
 使用控制账号向应用此程序的账号发送下列命令可以实现各种功能的控制：
@@ -41,4 +41,12 @@ autoPrefix = '[Auto Reply] '
 # showAutoPrefix: 是否在自动回复消息前添加前缀
 # remindMessage: 是否向控制账号发送消息提醒
 # autoPrefix: 自动回复的前缀
+```
+
+## 编辑自动回复列表存储文件
+在需要批量添加自动回复或回复内容较长时，使用控制命令逐条添加较为繁琐，可以直接将自动回复列表保存到一个文件中，再使用'/autodict load [file]'命令从文件导入自动回复列表，在文件中存储自动回复列表的格式如下：
+```
+<item><name>好友A备注</name><text>对A的自动回复内容</text></item>
+<item><name>好友B备注</name><text>对B的自动回复内容</text></item>
+<item><name>好友C备注</name><text>对C的自动回复内容</text></item>
 ```
