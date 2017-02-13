@@ -7,24 +7,24 @@
 ## 控制命令列表
 使用控制账号向应用此程序的账号发送下列命令可以实现各种功能的控制：
 ```
-- /help                         Show this table
-- /autoreply off                Turn off auto-reply
-- /autoreply on                 Turn on auto-reply
-- /autodict reset               Reset auto-reply dictionary
-- /autodict show                Show auto-reply dictionary
-- /autodict add [A] [B]	        Add an auto-reply item for [A] as [B]
-- /autodict del [A]             Delete the auto-reply item for [A]
-- /autodict load [file]         Load auto-reply dictionary from [file]
-- /autodict save [file]         Save auto-reply dictionary to [file]
-- /autoprefix set [A]      	    Set auto-reply prefix as [A]
-- /autoprefix off               Hide auto-reply prefix
-- /autoprefix on                Show auto-reply prefix
-- /remindmsg off                Turn off message reminder
-- /remindmsg on                 Turn on message reminder
+/help                         Show this table
+/autoreply off                Turn off auto-reply
+/autoreply on                 Turn on auto-reply
+/autodict reset               Reset auto-reply dictionary
+/autodict show                Show auto-reply dictionary
+/autodict add [A] [B]	        Add an auto-reply item for [A] as [B]
+/autodict del [A]             Delete the auto-reply item for [A]
+/autodict load [file]         Load auto-reply dictionary from [file]
+/autodict save [file]         Save auto-reply dictionary to [file]
+/autoprefix set [A]      	    Set auto-reply prefix as [A]
+/autoprefix off               Hide auto-reply prefix
+/autoprefix on                Show auto-reply prefix
+/remindmsg off                Turn off message reminder
+/remindmsg on                 Turn on message reminder
 ```
 
 ## 初始设置
-在下面这段代码中：
+在下面这段代码中进行初始设置：
 ```python
 # The admin-account controls the auto-reply
 adminRemarkName = 'Evensgn-R'
@@ -35,7 +35,10 @@ showAutoPrefix = True
 remindMessage = True
 # default auto-reply prefix
 autoPrefix = '[Auto Reply] '
+
+# adminRemarkName: 控制账号在应用此程序的微信账号中的备注
+# autoReply: 是否进行自动回复
+# showAutoPrefix: 是否在自动回复消息前添加前缀
+# remindMessage: 是否向控制账号发送消息提醒
+# autoPrefix: 自动回复的前缀
 ```
-- adminRemarkName的初始值应设定为控制账号在应用此程序的微信账号中的备注
-- 下方的几个布尔赋值语句为不同开关设置初始值
-- autoPrefix为自动回复的前缀
