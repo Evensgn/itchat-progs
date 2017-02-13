@@ -6,6 +6,8 @@ Evensgn的扩展个人微信账号功能的Python程序，使用[@LittleCoder](h
 ```bash
 pip install itchat
 ```
+感谢[@LittleCoder](https://github.com/littlecodersh)的[itchat](https://github.com/littlecodersh/ItChat)。
+itchat的[官方文档](https://itchat.readthedocs.io/zh/latest/)。
 ## 程序列表
 每个程序附带一个说明文件 *.md
 - [wechat_autoreply.py](wechat_autoreply.py)  [说明文档](wechat_autoreply.md) 对于特定的好友设置专有的自动回复内容，提供了多个控制命令。
